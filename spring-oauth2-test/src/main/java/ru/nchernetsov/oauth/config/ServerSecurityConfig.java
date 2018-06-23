@@ -21,10 +21,11 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        PasswordEncoder passwordEncoder = passwordEncoder();
         auth
             .inMemoryAuthentication()
             .passwordEncoder(passwordEncoder())
-            .withUser("dev").password("{noop}123").roles("USER");
+            .withUser("dev").password(passwordEncoder.encode("123")).roles("USER");
     }
 
     @Override
