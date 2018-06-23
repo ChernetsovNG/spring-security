@@ -1,0 +1,39 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.2.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'ru.nchernetsov'
+version '0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def oauthVersion = "2.3.3.RELEASE"
+def jwtVersion = "1.0.9.RELEASE"
+def zuulVersion = "1.4.4.RELEASE"
+def swaggerVersion = "2.8.0"
+def commonsIoVersion = "2.6"
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.springframework:spring-jdbc")
+    compile("com.h2database:h2")
+
+    compile("org.springframework.security.oauth:spring-security-oauth2:${oauthVersion}")
+    compile("org.springframework.security:spring-security-jwt:${jwtVersion}")
+    compile("org.apache.commons:commons-lang3")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jdk8")
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
+    testCompile("io.rest-assured:rest-assured")
+}

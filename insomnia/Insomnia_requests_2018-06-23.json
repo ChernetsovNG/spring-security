@@ -1,0 +1,515 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-06-23T10:46:50.202Z",
+	"__export_source": "insomnia.desktop.app:v5.16.6",
+	"resources": [
+		{
+			"_id": "wrk_f46d845899b6423fb4ee2b29b46f4b9c",
+			"created": 1520239964732,
+			"description": "",
+			"modified": 1520239964732,
+			"name": "Insomnia",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_a171376023144f71952684ca4a450781",
+			"color": null,
+			"created": 1520239964777,
+			"data": {},
+			"isPrivate": false,
+			"modified": 1520239964777,
+			"name": "New Environment",
+			"parentId": "wrk_f46d845899b6423fb4ee2b29b46f4b9c",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_22e9012510694121b8bcc8ca42fa49c0",
+			"cookies": [
+				{
+					"creation": "2018-06-23T10:39:06.371Z",
+					"domain": "localhost",
+					"hostOnly": true,
+					"httpOnly": true,
+					"id": "4823834090676047",
+					"key": "JSESSIONID",
+					"lastAccessed": "2018-06-23T10:39:43.690Z",
+					"path": "/",
+					"value": "729FF941536EAD61D8D9E05AB13F03C6"
+				}
+			],
+			"created": 1520239964839,
+			"modified": 1529750383690,
+			"name": "Default Jar",
+			"parentId": "wrk_f46d845899b6423fb4ee2b29b46f4b9c",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_b182f0887c7444388bcd54bae5d361ba",
+			"created": 1529748373993,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1529748373994,
+			"modified": 1529748373993,
+			"name": "oauth2",
+			"parentId": "wrk_f46d845899b6423fb4ee2b29b46f4b9c",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"created": 1529748381120,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1529748381120,
+			"modified": 1529748381120,
+			"name": "ivoice",
+			"parentId": "wrk_f46d845899b6423fb4ee2b29b46f4b9c",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_276994a356ef4a958e460f50292e143d",
+			"authentication": {
+				"disabled": false,
+				"password": "secret",
+				"type": "basic",
+				"username": "clientIdPassword"
+			},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_158adeea804144b897333f4544108650",
+						"name": "grant_type",
+						"value": "password"
+					},
+					{
+						"id": "pair_38cb1d9a23b1462db94607b3b349662d",
+						"name": "username",
+						"value": "dev"
+					},
+					{
+						"id": "pair_4a6755ed22ce45c1ac65f388df2ff8cb",
+						"name": "password",
+						"value": "123"
+					},
+					{
+						"id": "pair_d0d23d71d70346d8b74bfa9fe81beffb",
+						"name": "client_id",
+						"value": "clientIdPassword"
+					}
+				]
+			},
+			"created": 1529748430591,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_cafe3baed4404fc98b521f33d2f1a1ff",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748430591,
+			"method": "POST",
+			"modified": 1529749269589,
+			"name": "get_token",
+			"parameters": [],
+			"parentId": "fld_b182f0887c7444388bcd54bae5d361ba",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8080/oauth/token",
+			"_type": "request"
+		},
+		{
+			"_id": "req_03bf619706614c79a8a13589f79b1e96",
+			"authentication": {
+				"token": "74121db6-7a2e-4cad-a19b-be60bcf23d79",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1529750299787,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1529750299787,
+			"method": "GET",
+			"modified": 1529750381395,
+			"name": "get_resource_by_token",
+			"parameters": [],
+			"parentId": "fld_b182f0887c7444388bcd54bae5d361ba",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8080/foos/10",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b6cc5e0162b64cbdbb6589e807e60257",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"devices\": [\n\t\t{\n\t\t\t\"deviceId\": 41,\n\t\t\t\"operatorId\": 4\n\t\t},\n\t\t{\n\t\t\t\"deviceId\": 42,\n\t\t\t\"operatorId\": 4\n\t\t}\n\t]\n}"
+			},
+			"created": 1520239990013,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_954acc43925b405ea0b20993f61b5fd2",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377699.5781,
+			"method": "POST",
+			"modified": 1529748413488,
+			"name": "LastMessagesByPostTest",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://10.101.20.223:7878/monitoring/schedules/routes/devices",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ba78aad4a0254881874de998832f9029",
+			"authentication": {},
+			"body": {},
+			"created": 1525167284715,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1529748377699.9688,
+			"method": "DELETE",
+			"modified": 1529748411702,
+			"name": "delete_product",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8080/online_shop/api/products/59b79f06-ca8d-4b58-bb03-f73eb1f9f990",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d28b9623fbd748a0b39b6be945422001",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"tickets\": 15\n}"
+			},
+			"created": 1525167771469,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_69c06cf664144e9096da690568569b58",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377698.4062,
+			"method": "POST",
+			"modified": 1529748410091,
+			"name": "create_product",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:5000/events/DjMadlib",
+			"_type": "request"
+		},
+		{
+			"_id": "req_59e704c38e51481d899f1df7947789ce",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"phone\":\"79653976542\",\n  \"scenario\":\"ПРИБЫТИЕ НА РАЗГРУЗКУ\",\n  \"time\":\"29.05.2018 01:38\",\n  \"driverName\":\"Никита\",\n  \"managerPhone\":\"79771368592\",\n  \"dispatcherPhone\":\"79055379162\"\n}\n"
+			},
+			"created": 1526499891685,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_2613ae3880e8421c846565339ac7d740",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_fdb99058390e4b6f9bc6b459a9ca70bc",
+					"name": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdm9pY2UtbG9uZ3Jhbi1hcHAiLCJqdGkiOiJlZTljNDFjNi0wMjExLTQ5NjktOGY5OC1jNzUwMzgzOGFjYjMiLCJpYXQiOjE1MjUyOTYyMjIsImV4cCI6MTUyNTI5OTgyMn0.dPmI462sioUJvaFA2wH_5G-QAdxP7zAIcGPtiLLmrDE"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377699.1875,
+			"method": "POST",
+			"modified": 1529748408487,
+			"name": "check-adress",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://longran.client.ivoice.online/api/calls/init",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6b9dcf73f944477da21ab6960532c6d1",
+			"authentication": {},
+			"body": {},
+			"created": 1526500129247,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_63baf8b654084d9a838fb5aabd90b417",
+					"name": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdm9pY2UtbG9uZ3Jhbi1hcHAiLCJqdGkiOiJlZTljNDFjNi0wMjExLTQ5NjktOGY5OC1jNzUwMzgzOGFjYjMiLCJpYXQiOjE1MjUyOTYyMjIsImV4cCI6MTUyNTI5OTgyMn0.dPmI462sioUJvaFA2wH_5G-QAdxP7zAIcGPtiLLmrDE"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377697.625,
+			"method": "GET",
+			"modified": 1529748406769,
+			"name": "check-status",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://longran.client.ivoice.online/api/calls/15220740-59e3-11e8-be20-ffbf17c5cc00",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ca17394a39af42bb8816db55e8b921b2",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"lang\": \"ru-ru\",\n\t\"text\": \"НА этом опрос завершён! Спасибо что пользуетесь услугами службы доставки Кушай Суши и Пиццу. Желаю Вам хорошего дня и всего доброго!\",\n\t\"speaker\": \"Maxim\"\n}\n"
+			},
+			"created": 1526558721520,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6cd9c0b29c844d939c413b8779c70793",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377700.75,
+			"method": "POST",
+			"modified": 1529748405131,
+			"name": "generate-audio-amazon-polly",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8202/audio/polly/generate",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ec0e09bfe22e42919abcdf578a682bd4",
+			"authentication": {},
+			"body": {},
+			"created": 1526750869364,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1529748377694.5,
+			"method": "GET",
+			"modified": 1529748403307,
+			"name": "bges-call-controller",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8191/app/bges/calls/load",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3b2002fe30be404ab03a285bc905c0a7",
+			"authentication": {},
+			"body": {},
+			"created": 1526841086798,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1529748377682,
+			"method": "GET",
+			"modified": 1529748401478,
+			"name": "sip-system-mock",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8204/debug/callUser",
+			"_type": "request"
+		},
+		{
+			"_id": "req_37888444b5e746169ef57c0a0f8dcbe0",
+			"authentication": {},
+			"body": {},
+			"created": 1527182297564,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f2a872bcf98f42fda755e6b41fdd8a7d",
+					"name": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdm9pY2UtbG9uZ3Jhbi1hcHAiLCJqdGkiOiJlZTljNDFjNi0wMjExLTQ5NjktOGY5OC1jNzUwMzgzOGFjYjMiLCJpYXQiOjE1MjUyOTYyMjIsImV4cCI6MTUyNTI5OTgyMn0.dPmI462sioUJvaFA2wH_5G-QAdxP7zAIcGPtiLLmrDE"
+				},
+				{
+					"id": "pair_4941239bd5e24f60a5082b8ad6252f04",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377707,
+			"method": "GET",
+			"modified": 1529748399902,
+			"name": "get-ivoice-results",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://longran.client.ivoice.online/api/calls/5efa65b0-5f79-11e8-b823-05106b47806f?amount=1&status=ALL",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b15c9dca928a4218a62fb81f284211b6",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"fileName": "/home/n_chernetsov/WORK/IVOICE/DOCS/СУШИ/orders (4).xls",
+						"id": "pair_5426427471ce4be5859f6628698e91eb",
+						"name": "file",
+						"type": "file",
+						"value": ""
+					},
+					{
+						"id": "pair_cd6401c85bae4ca2819059d4a7490747",
+						"name": "scenario",
+						"value": "scenario"
+					}
+				]
+			},
+			"created": 1527693876413,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f1b3b934263a4faa986a85089f4c4d7b",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377657,
+			"method": "POST",
+			"modified": 1529748398074,
+			"name": "upload-file",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8093/api/callTasks/clients/sushi/load",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aaddc19b98754f10b32b3db86925eaa8",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"vendor\":\"yandex\",\n  \"text\":\"привет от старых штиблет!\",\n\t\"speaker\":\"zahar\"\n}"
+			},
+			"created": 1527951527769,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_5543381b04f24f819bf57c59b2b4e76a",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377607,
+			"method": "POST",
+			"modified": 1529748395086,
+			"name": "generate-audio-yandex",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8202/tts/gen",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a1eb2712496f4444b1a02257b1faf844",
+			"authentication": {},
+			"body": {
+				"mimeType": "",
+				"text": "На этом опрос завершен! Спасибо что пользуетесь услугами службы доставки Кушай Суши и Пиццу. Желаю Вам Хорошего дня и всего доброго!\n\n\n"
+			},
+			"created": 1527952497315,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_2b7df35f95674cc5b015c145acfd5b6a",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529748377557,
+			"method": "POST",
+			"modified": 1529748392055,
+			"name": "yandex-speech-generator",
+			"parameters": [],
+			"parentId": "fld_c1144554545d4d3f8f79ccba4d75b1e0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8192/tts/yandex/convert",
+			"_type": "request"
+		}
+	]
+}
